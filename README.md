@@ -8,15 +8,41 @@ Qwen/Qwen3-4B fine-tuned with LoRA · **Score: 40.1**
 ## Decision Index 0.2.1 — Competitive Landscape
 
 Includes models currently on the board and all pending PR submissions as of 2026-10-04.
-★ = kas-4b (this model)
+
+### Large models (20B+)
 
 ```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'xyChart': {'plotColorPalette': '#4A90D9'}}}}%%
 xychart-beta
-    title "Decision Index 0.2.1 Scores"
-    x-axis ["Torchcast 27B", "Clef", "Matilda Jev", "Jev", "Blink 26B", "Rune 26B", "Decision Vega 27B", "Xor 26B", "JADE", "AJev 12B", "ezjev-4b", "Decision Lux 9B", "Scion 9B", "Decision Nox 4B", "kas-4b ★", "RSI-Jev 3B", "intelif-4B", "EXAONE 1.2B", "Decision Sol 2B", "Tev1-4B", "RSI-Jev 2B", "Sifr 0.8B", "Bekko 400M", "Decision Eos 0.8B", "Kodiak 1B", "Decision Kai 0.6B", "Bekko 68M", "Bekko 17M"]
+    title "Score — 20B+ models"
+    x-axis ["Torchcast 27B", "Clef", "Matilda 27B", "Jev", "Blink 26B", "Rune 26B", "Vega 27B", "Xor 26B"]
     y-axis "Decision Index" 0 --> 70
-    bar [65.0, 61.98, 59.59, 57.9, 57.48, 57.44, 56.47, 56.08, 53.16, 52.22, 51.15, 46.26, 45.9, 43.77, 40.1, 38.38, 31.77, 30.29, 29.53, 29.2, 28.31, 26.88, 21.87, 20.15, 18.69, 16.29, 12.83, 7.37]
+    bar [65.0, 61.98, 59.59, 57.9, 57.48, 57.44, 56.47, 56.08]
 ```
+
+### Mid-size models (4B–12B) — kas-4b tier
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'xyChart': {'plotColorPalette': '#6DAF6D,#6DAF6D,#6DAF6D,#6DAF6D,#6DAF6D,#6DAF6D,#F4A62A'}}}}%%
+xychart-beta
+    title "Score — 4B–12B models"
+    x-axis ["JADE", "AJev 12B", "ezjev 4B", "Lux 9B", "Scion 9B", "Nox 4B", "kas-4b ★"]
+    y-axis "Decision Index" 0 --> 70
+    bar [53.16, 52.22, 51.15, 46.26, 45.9, 43.77, 40.1]
+```
+
+### Small models (sub-4B)
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'xyChart': {'plotColorPalette': '#9E9E9E'}}}}%%
+xychart-beta
+    title "Score — sub-4B models"
+    x-axis ["RSI-Jev 3B", "intelif 4B", "EXAONE 1.2B", "Sol 2B", "Tev1 4B", "RSI-Jev 2B", "Sifr 0.8B", "Bekko 400M", "Eos 0.8B", "Kodiak 1B", "Kai 0.6B", "Bekko 68M", "Bekko 17M"]
+    y-axis "Decision Index" 0 --> 70
+    bar [38.38, 31.77, 30.29, 29.53, 29.2, 28.31, 26.88, 21.87, 20.15, 18.69, 16.29, 12.83, 7.37]
+```
+
+### Full table
 
 | # | Model | Score | Params | Status |
 |---|---|---:|---|---|
