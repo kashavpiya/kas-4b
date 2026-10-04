@@ -59,7 +59,7 @@ class KasEngine(Engine):
 
     def __init__(
         self,
-        model="kas0/kas-4b",
+        model="kpiya/kas-4b",  # Qwen3-4B base, LoRA r64
         revision=None,
         device=None,
         dtype=None,
