@@ -101,6 +101,28 @@ xychart-beta
 | Latency | 39.2ms median, 546ms p95 |
 | Hardware | RTX PRO 6000 Blackwell (HF Jobs) |
 
-**Per-area:** Tools 49.0 · Retrieval 40.4 · Knowledge 39.5 · Arts 37.7 · Language 35.2
-
 Model: [kpiya/kas-4b](https://huggingface.co/kpiya/kas-4b) · Results: [kpiya/decision-index-results](https://huggingface.co/datasets/kpiya/decision-index-results/tree/main/runs/kas-4b)
+
+---
+
+## 4B Model Comparison — Where kas-4b Leads and Trails
+
+Per-area breakdown against all 4B submissions on the Decision Index 0.2.1.
+
+| Area | ezjev-4b (51.2) | Nox 4B (43.8) | **kas-4b (40.1)** | intelif-4B (31.8) |
+|---|---:|---:|---:|---:|
+| Tools & Automation | 69.9 | 60.1 | **49.0** | 51.0 |
+| Retrieval & Classification | 56.3 | 52.4 | **40.4** | 39.6 |
+| Knowledge & Reasoning | 33.5 | 27.6 | **39.5** | 18.3 |
+| Language Understanding | 60.2 | 48.6 | **35.2** | 31.1 |
+| Arts & Human Taste | 28.8 | 25.8 | **37.7** | 17.8 |
+
+**kas-4b leads the 4B tier on:**
+- Knowledge & Reasoning (39.5) — highest of all 4B models; higher LoRA rank (r64) likely helps on harder reasoning tasks
+- Arts & Human Taste (37.7) — highest of all 4B models by a wide margin
+
+**kas-4b trails on:**
+- Language Understanding (35.2) — 13–25 points behind ezjev and Nox; language-heavy fine-tuning data favors those models
+- Tools & Automation (49.0) — behind ezjev (69.9) and Nox (60.1)
+
+**Profile:** the most balanced 4B model on the benchmark — consistent across all five areas rather than peaking on one or two.
