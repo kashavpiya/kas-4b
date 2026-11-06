@@ -1,7 +1,8 @@
 # kas-4b
 
 Decision Index v0.2.1 submission — [kpiya/kas-4b](https://huggingface.co/kpiya/kas-4b)  
-Qwen/Qwen3-4B fine-tuned with LoRA · **Score: 40.1**
+Qwen/Qwen3-4B fine-tuned with LoRA · **Score: 40.1**  
+**Run it locally (Mac / Windows / Linux):** [kpiya/kas-4b-GGUF](https://huggingface.co/kpiya/kas-4b-GGUF) · `ollama run hf.co/kpiya/kas-4b-GGUF:Q4_K_M`
 
 ---
 
@@ -101,7 +102,31 @@ xychart-beta
 | Latency | 39.2ms median, 546ms p95 |
 | Hardware | RTX PRO 6000 Blackwell (HF Jobs) |
 
-Model: [kpiya/kas-4b](https://huggingface.co/kpiya/kas-4b) · Results: [kpiya/decision-index-results](https://huggingface.co/datasets/kpiya/decision-index-results/tree/main/runs/kas-4b)
+Model: [kpiya/kas-4b](https://huggingface.co/kpiya/kas-4b) · GGUF: [kpiya/kas-4b-GGUF](https://huggingface.co/kpiya/kas-4b-GGUF) · Results: [kpiya/decision-index-results](https://huggingface.co/datasets/kpiya/decision-index-results/tree/main/runs/kas-4b)
+
+---
+
+## Run Locally
+
+Quantized GGUF builds for llama.cpp, Ollama and LM Studio. Works on Apple Silicon Macs, Windows and Linux.
+
+| File | Quant | Size | Notes |
+|---|---|---:|---|
+| [`kas-4b-Q4_K_M.gguf`](https://huggingface.co/kpiya/kas-4b-GGUF/blob/main/kas-4b-Q4_K_M.gguf) | Q4_K_M | 2.3 GB | Recommended |
+| [`kas-4b-Q8_0.gguf`](https://huggingface.co/kpiya/kas-4b-GGUF/blob/main/kas-4b-Q8_0.gguf) | Q8_0 | 4.0 GB | Near-lossless |
+| [`kas-4b-BF16.gguf`](https://huggingface.co/kpiya/kas-4b-GGUF/blob/main/kas-4b-BF16.gguf) | BF16 | 7.5 GB | Full precision |
+
+```bash
+# Ollama
+ollama run hf.co/kpiya/kas-4b-GGUF:Q4_K_M
+
+# llama.cpp
+llama-cli -hf kpiya/kas-4b-GGUF:Q4_K_M
+```
+
+**LM Studio:** search `kpiya/kas-4b-GGUF` and pick a quant.
+
+Like Qwen3, the model emits a `<think>` block by default; add `/no_think` to a prompt to skip it. The Decision Index score comes from the logit-scoring engine in `kas_engine/`, not from free-form chat.
 
 ---
 
